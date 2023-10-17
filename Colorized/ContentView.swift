@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var redSliderValue = Double.random(in: 0...255)
+    @State private var greenSliderValue = Double.random(in: 0...255)
+    @State private var blueSliderValue = Double.random(in: 0...255)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(.darkGray)
+                .ignoresSafeArea()
+            
+            VStack {
+                ColorImageView(color: Color(red: redSliderValue/255, green: greenSliderValue/255, blue: blueSliderValue/255))
+                
+                SliderView(value: $redSliderValue).tint(.red)
+                SliderView(value: $greenSliderValue).tint(.green)
+                SliderView(value: $blueSliderValue).tint(.blue)
+                
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -24,3 +36,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
