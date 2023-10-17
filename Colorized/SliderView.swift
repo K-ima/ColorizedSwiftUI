@@ -13,6 +13,7 @@ struct SliderView: View {
     var body: some View {
         HStack {
             Text(String(lround(value))).foregroundColor(.white)
+                .frame(width: 40)
             Slider(value: $value, in: 0...255, step: 1)
         }
     }

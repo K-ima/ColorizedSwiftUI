@@ -18,7 +18,6 @@ struct ColorImageView: View {
             .foregroundColor(color)
             .padding()
     }
-    
 }
 
 struct ColorImageView_Previews: PreviewProvider {

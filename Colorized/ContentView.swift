@@ -17,7 +17,7 @@ struct ContentView: View {
             Color(.darkGray)
                 .ignoresSafeArea()
             
-            VStack {
+            VStack() {
                 ColorImageView(color: Color(red: redSliderValue/255, green: greenSliderValue/255, blue: blueSliderValue/255))
                 
                 SliderView(value: $redSliderValue).tint(.red)
