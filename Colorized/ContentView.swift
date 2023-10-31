@@ -18,11 +18,15 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack() {
-                ColorImageView(color: Color(red: redSliderValue/255, green: greenSliderValue/255, blue: blueSliderValue/255))
+                ColorImageView(
+                    red: redSliderValue,
+                    green: greenSliderValue,
+                    blue: blueSliderValue
+                )
                 
-                SliderView(value: $redSliderValue).tint(.red)
-                SliderView(value: $greenSliderValue).tint(.green)
-                SliderView(value: $blueSliderValue).tint(.blue)
+                SliderView(value: $redSliderValue, tint: .red)
+                SliderView(value: $greenSliderValue, tint: .green)
+                SliderView(value: $blueSliderValue, tint: .blue)
                 
                 Spacer()
             }
